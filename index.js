@@ -21,7 +21,7 @@ async function getSyncedInterval(chain) {
 
 async function getBlockTraceByNumber(chain, blockNumber, txHash) {
 
-  await delay(1000); // This adds a 1-second delay before each request. Adjust as necessary to avoid rate limits.
+  await delay(1000); // This adds a 1-second delay before each request. Adjust as necessary to avoid our rate limits.
 
   const url = `${BASE_URL}${chain}/block-trace/${blockNumber}`;
 
@@ -46,7 +46,7 @@ async function getBlockTraceByNumber(chain, blockNumber, txHash) {
 }
 
 async function getBlockTraceByNumberAndTxHash(chain, blockNumber, txHash) {
-  await delay(1000); // This adds a 1-second delay before each request. Adjust as necessary.
+  await delay(1000); // This adds a 1-second delay before each request. Adjust as necessary to avoid our rate limits.
 
   const url = `${BASE_URL}${chain}/block-trace/${blockNumber}/tx-hash/${txHash}`;
   const response = await axios.get(url, {
